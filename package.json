@@ -1,0 +1,67 @@
+{
+  "name": "kimiaiverify",
+  "displayName": "kimiaiverify",
+  "description": "First AI extension",
+  "version": "0.0.1",
+  "publisher": "manfonly",
+  "author": "manfonly",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "editor.aicstat",
+      "title": "AI static check"
+    }],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == c || resourceLangId == cpp",
+          "command": "editor.aicstat",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "key": "cmd+shift+d",
+        "command": "editor.aicstat"
+      }
+    ],
+    "configuration": {
+         "type": "object",
+         "title": "AI service API Settings",
+         "properties": {
+            "kimiApiKey": {
+               "type": "string",
+               "default": "",
+               "description": "The KIMI AI API Key"
+            }
+         }
+      }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "openai": "^4.26.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
