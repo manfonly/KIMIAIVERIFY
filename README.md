@@ -2,16 +2,39 @@
 
 This is the demo project for VScode plugin which call kimi chat API by javascript to do static analyze C & C++ code.
 
-## Requirements
+## How to use
+### First, install KIMIAIVERIFY from market place or vs package
+You can download vsix package from Release section in the github. And using following command to install:
+```
+code --install-extension .\kimiaiverify-0.0.1.vsix
+```
 
-You need a kimi AI account, and get your API token at:
+### Then, you need a kimi AI account, and get your API token at:
 user account info/basic info:  
 https://platform.moonshot.cn/console/info
 
 ![KIMI API](img/kimi_info.jpg)
 
 We call this token as:  
-[KIMI API KEY]
+<mark>[KIMI API KEY]</mark>
+
+### Finally, you need to set your kimi API key
+Open the extension settings page by right click the configure button:
+![AI check menu](img/extensionhead.jpg)
+
+Then copy your kimi API key from here:
+![AI check menu](img/setkimiapikey.jpg)
+
+### Start to use AI static check
+Now everything is OK, just open any C/C++ source file, you can find "AI static check" in the right click menu:  
+![AI check menu](img/aimenu.png)
+
+Or you can use CMD+shift+D keyboard short cut to call out this function.
+
+The AI check result can be find at output log:
+![AI check output](img/aicstatlog.png)
+
+## Development Requirements
 
 You also need to have a Microsoft account, login:  
 https://login.live.com
@@ -33,16 +56,6 @@ And don't forget to copy to some safe place:
 You also need to create a visual studio publisher at:
 https://marketplace.visualstudio.com/manage/createpublisher
 ![Create VS publisher](img/createpublisher.jpg)
-
-## How to use
-First, install KIMIAIVERIFY from market place.
-Open any C/C++ source file, you can find "AI static check" in the right click menu:  
-![AI check menu](img/aimenu.png)
-
-Or you can use CMD+shift+D keyboard short cut to call out this function.
-
-The AI check result can be find at output log:
-![AI check output](img/aicstatlog.png)
 
 ## Extension Settings
 
